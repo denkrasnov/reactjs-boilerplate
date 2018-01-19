@@ -1,2 +1,14 @@
-const css = require("./app.css");
-console.log("Hello from webpack bundle!");
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import App from "./App.js";
+import styles from "./app.css";
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+
+if (module.hot) {
+  module.hot.accept();
+}
