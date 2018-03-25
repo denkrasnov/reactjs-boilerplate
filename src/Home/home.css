@@ -1,0 +1,13 @@
+.photo {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -140px;
+  margin-left: -100px;
+}

@@ -1,8 +1,9 @@
 import React from "react";
+import Home from "./Home";
 
 const App = () => {
   return (
-    <h1>Hello world from Denisss!</h1>
+    <Home />
   );
 }
 
