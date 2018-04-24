@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'inline-source-map',
   entry: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', "./src/index.js"],
   output: {
-    path: path.resolve(__dirname, "public"),  
+    path: path.resolve(__dirname, "public/build"),  
     publicPath: "/",
     filename: "bundle.js", 
   },
@@ -22,7 +22,7 @@ module.exports = {
           options: {
             sourceMap: true,
             modules: true,
-            localIdentName: '[hash:base64:5]',
+            // localIdentName: "[name]-[local]--[hash:base64:5]",
           },
         },]
       },
