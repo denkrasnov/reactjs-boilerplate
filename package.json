@@ -6,10 +6,13 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "build": "webpack --config ./webpack.config.prod.js --progress --colors"
+    "build": "webpack --config ./webpack.config.prod.js --progress --colors",
+    "lint": "./node_modules/.bin/eslint src",
+    "prettier": "prettier --write \"**/*.js\""
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
@@ -17,8 +20,14 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.8",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-react": "^7.8.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
+    "prettier": "1.13.5",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^2.0.4",
