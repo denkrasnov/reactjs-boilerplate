@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import photo from "../images/denis.jpg";
+// import photo from "../images/denis.jpg";
 import styles from "./home.css";
 
 class Home extends Component {
@@ -8,7 +8,8 @@ class Home extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <img className={styles.photo} src={photo} />
+        {/* <img className={styles.photo} src={photo} />
+        <div>Denisss</div> */}
       </div>
     );
   }

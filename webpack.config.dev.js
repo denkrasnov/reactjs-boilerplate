@@ -1,15 +1,19 @@
 const path = require("path");
 const webpack = require("webpack");
+const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const chalk = require("chalk");
 
 module.exports = {
   devtool: "inline-source-map",
-  entry: ["webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000", "./src/index.js"],
+  entry: [
+    "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000",
+    "./src/index.js",
+  ],
   output: {
     path: path.resolve(__dirname, "public/build"),
     publicPath: "/",
     filename: "bundle.js",
   },
-
   module: {
     rules: [
       {
@@ -44,5 +48,14 @@ module.exports = {
       },
     ],
   },
-  plugins: [new webpack.NamedModulesPlugin(), new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new ProgressBarPlugin({
+      format: `webpack building [:bar] ${chalk.green.bold(
+        ":percent"
+      )} (:elapsed seconds)`,
+      clear: false,
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };

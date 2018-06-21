@@ -1,6 +1,7 @@
 import React from "react";
+import { hot } from "react-hot-loader";
 import Home from "./Home";
 
 const App = () => <Home />;
 
-export default App;
+export default hot(module)(App);

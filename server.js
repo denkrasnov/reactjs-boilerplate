@@ -18,6 +18,7 @@ if (isDevelopment) {
   app.use(
     webpackDevMiddleware(compiler, {
       publicPath: config.output.publicPath,
+      stats: "minimal",
     })
   );
 

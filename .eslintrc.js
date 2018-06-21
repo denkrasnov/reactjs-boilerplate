@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["eslint:recommended", "prettier"],
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
   parser: "babel-eslint",
   plugins: ["babel", "react"],
   env: {
@@ -44,11 +44,20 @@ module.exports = {
     ],
     "no-param-reassign": ["error", { props: true }],
     "arrow-parens": ["error", "as-needed"],
-    "no-restricted-syntax": ["error", "WithStatement", "BinaryExpression[operator='in']"],
+    "no-restricted-syntax": [
+      "error",
+      "WithStatement",
+      "BinaryExpression[operator='in']",
+    ],
     "dot-notation": "error",
     "no-duplicate-imports": ["error", { includeExports: true }],
     "nonblock-statement-body-position": ["error", "beside"],
     "no-else-return": "error",
+    "babel/new-cap": 1,
+    "babel/no-invalid-this": 1,
+    "babel/quotes": 1,
+    "babel/semi": 1,
+    "babel/no-unused-expressions": 1,
   },
   globals: {
     window: true,
