@@ -17,6 +17,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
@@ -32,13 +39,6 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
-      },
-      {
         test: /\.(pdf|png|jpg|gif)$/,
         use: [
           {
@@ -50,10 +50,8 @@ module.exports = {
   },
   plugins: [
     new ProgressBarPlugin({
-      format: `webpack building [:bar] ${chalk.green.bold(
-        ":percent"
-      )} (:elapsed seconds)`,
-      clear: false,
+      format: `webpack building [:bar] ${chalk.green.bold(":percent")}`,
+      complete: chalk.hex("#224dff")("="),
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
