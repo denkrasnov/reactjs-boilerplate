@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import photo from "../images/denis.jpg";
+import icon from "../../images/react.gif";
 import styles from "./Home.css";
 
 class Home extends Component {
@@ -7,9 +7,9 @@ class Home extends Component {
 
   render() {
     return (
-      <section className={styles.container}>
-        <img className={styles.photo} src={photo} />
-        <h1>RectJS boilerplate</h1>
+      <section>
+        <img className={styles.image} src={icon} />
+        <h1 className={styles.header}>RectJS boilerplate</h1>
       </section>
     );
   }

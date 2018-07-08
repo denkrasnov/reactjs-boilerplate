@@ -1,16 +1,29 @@
+/*eslint-disable no-console*/
 const path = require("path");
 const express = require("express");
 
 const app = express();
+
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require("webpack-hot-middleware");
 const config = require("./webpack.config.dev");
+const chalk = require("chalk");
 
 const compiler = webpack(config);
 
 const DEFAULT_PORT = 3001;
-app.set("port", process.env.PORT || DEFAULT_PORT);
+const PORT = process.env.PORT || DEFAULT_PORT;
+
+app.set("port", PORT);
+
+if (PORT === DEFAULT_PORT) {
+  console.log(`
+ ${chalk.bgHex("#224dff").white("--- ReactJS ---")}
+ Starting server on port 3001
+ You are connected to ${chalk.hex("#f7c132")("http://localhost:3001/")}
+`);
+}
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
@@ -18,7 +31,12 @@ if (isDevelopment) {
   app.use(
     webpackDevMiddleware(compiler, {
       publicPath: config.output.publicPath,
-      stats: "minimal",
+      stats: {
+        builtAt: false,
+        children: false,
+        colors: true,
+        modules: false,
+      },
     })
   );
 

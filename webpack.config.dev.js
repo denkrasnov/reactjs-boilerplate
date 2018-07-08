@@ -4,8 +4,10 @@ const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const chalk = require("chalk");
 
 module.exports = {
+  mode: "development",
   devtool: "inline-source-map",
   entry: [
+    "babel-polyfill",
     "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000",
     "./src/index.js",
   ],
@@ -17,15 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
-      },
-      {
         test: /\.css$/,
-        exclude: /node_modules/,
         use: [
           "style-loader",
           {
@@ -33,10 +27,18 @@ module.exports = {
             options: {
               sourceMap: true,
               modules: true,
+              importLoaders: 1,
               localIdentName: "[name]-[local]--[hash:base64:5]",
             },
           },
         ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.(pdf|png|jpg|gif)$/,
