@@ -11,18 +11,18 @@
     "prettier": "prettier --write \"**/*.js\""
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-export-extensions": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
     "chalk": "^2.4.1",
     "css-loader": "^0.28.8",
-    "eslint": "^4.19.1",
+    "eslint": "^5.9.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.11.0",
@@ -41,8 +41,9 @@
     "webpack-hot-middleware": "^2.22.2"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "express": "^4.16.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   }
 }

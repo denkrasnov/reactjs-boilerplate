@@ -7,10 +7,12 @@ class Home extends Component {
 
   render() {
     return (
-      <section>
-        <img className={styles.image} src={icon} />
-        <h1 className={styles.header}>RectJS boilerplate</h1>
-      </section>
+      <>
+        <section>
+          <img className={styles.image} src={icon} />
+          <h1 className={styles.header}>RectJS boilerplate</h1>
+        </section>
+      </>
     );
   }
 }

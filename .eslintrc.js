@@ -14,7 +14,6 @@ module.exports = {
     },
   },
   rules: {
-    quotes: ["error", "double"],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "prefer-const": [

@@ -1,9 +1,13 @@
 {
-  "presets": ["env", "react"],
+  "presets": [
+    ["@babel/preset-env", { "useBuiltIns": "entry" }],
+    "@babel/preset-react"
+  ],
   "plugins": [
-    "transform-export-extensions",
-    "transform-class-properties",
-    "transform-object-rest-spread",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
     "react-hot-loader/babel"
   ]
 }
