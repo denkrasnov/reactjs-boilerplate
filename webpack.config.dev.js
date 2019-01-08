@@ -11,7 +11,7 @@ module.exports = {
     "./src/index.js",
   ],
   output: {
-    path: path.resolve(__dirname, "public/build"),
+    path: path.resolve(__dirname, "build"),
     publicPath: "/",
     filename: "bundle.js",
   },
@@ -27,9 +27,10 @@ module.exports = {
               sourceMap: true,
               modules: true,
               importLoaders: 1,
-              localIdentName: "[name]-[local]--[hash:base64:5]",
+              localIdentName: "[local]--[hash:base64:5]",
             },
           },
+          "postcss-loader",
         ],
       },
       {

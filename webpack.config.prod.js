@@ -7,7 +7,7 @@ module.exports = {
   devtool: "source-map",
   entry: ["./src/index.js"],
   output: {
-    path: path.resolve(__dirname, "public/build"),
+    path: path.resolve(__dirname, "build"),
     publicPath: "/public/",
     filename: "bundle.js",
   },
@@ -21,9 +21,12 @@ module.exports = {
             loader: "css-loader",
             options: {
               sourceMap: true,
+              importLoaders: 1,
               modules: true,
+              localIdentName: "[local]--[hash:base64:5]",
             },
           },
+          "postcss-loader",
         ],
       },
       {

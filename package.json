@@ -7,8 +7,11 @@
   "scripts": {
     "start": "node server.js",
     "build": "webpack --config ./webpack.config.prod.js --progress --colors",
-    "lint": "./node_modules/.bin/eslint src",
-    "prettier": "prettier --write \"**/*.js\""
+    "lint": "yarn lint:eslint && yarn lint:prettier --write && yarn lint:stylelint --fix",
+    "lint:verify": "yarn lint:prettier -l && yarn lint:eslint && yarn lint:stylelint",
+    "lint:prettier": "prettier \"**/*.{js,css}\"",
+    "lint:eslint": "eslint .",
+    "lint:stylelint": "stylelint \"**/*.css\""
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -30,10 +33,13 @@
     "eslint-plugin-react": "^7.8.2",
     "file-loader": "^1.1.11",
     "mini-css-extract-plugin": "^0.4.1",
+    "postcss-loader": "^3.0.0",
     "prettier": "1.13.5",
     "progress-bar-webpack-plugin": "^1.11.0",
     "react-hot-loader": "^4.3.3",
     "style-loader": "^0.19.1",
+    "stylelint": "^9.9.0",
+    "stylelint-config-standard": "^18.2.0",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-middleware": "^3.1.3",
