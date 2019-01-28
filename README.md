@@ -23,4 +23,4 @@ based application with minimal effort.
 1. Clone this repo.
 2. Move to the appropriate/cloned directory.
 3. Run `yarn install` to install dependencies.
-4. Run `yarn dev` to start web server and see the app at `http://localhost:3000`
+4. Run `yarn start` to start web server and see the app at `http://localhost:3000`
