@@ -1,7 +1,7 @@
 module.exports = {
   extends: ["eslint:recommended", "plugin:prettier/recommended"],
   parser: "babel-eslint",
-  plugins: ["babel", "react"],
+  plugins: ["babel", "react", "react-hooks"],
   env: {
     browser: true,
     es6: true,
@@ -57,6 +57,8 @@ module.exports = {
     "babel/quotes": 1,
     "babel/semi": 1,
     "babel/no-unused-expressions": 1,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
   },
   globals: {
     window: true,
